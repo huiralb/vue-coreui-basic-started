@@ -42,10 +42,6 @@
           <router-view></router-view>
         </div>
       </main>
-      <AppAside fixed>
-        <!--aside-->
-        <DefaultAside/>
-      </AppAside>
     </div>
     <TheFooter>
       <!--footer-->
@@ -62,13 +58,25 @@
 </template>
 
 <script>
-import nav from '@/_nav'
-import { Header as AppHeader, SidebarToggler, Sidebar as AppSidebar, SidebarFooter, SidebarForm, SidebarHeader, SidebarMinimizer, SidebarNav, Aside as AppAside, AsideToggler, Footer as TheFooter, Breadcrumb } from '@coreui/vue'
-import DefaultAside from './DefaultAside'
-import DefaultHeaderDropdownAccnt from './DefaultHeaderDropdownAccnt'
+import nav from "@/_nav"
+import {
+  Header as AppHeader,
+  SidebarToggler,
+  Sidebar as AppSidebar,
+  SidebarFooter,
+  SidebarForm,
+  SidebarHeader,
+  SidebarMinimizer,
+  SidebarNav,
+  Aside as AppAside,
+  AsideToggler,
+  Footer as TheFooter,
+  Breadcrumb
+} from "@coreui/vue"
+import DefaultHeaderDropdownAccnt from "./DefaultHeaderDropdownAccnt"
 
 export default {
-  name: 'full',
+  name: "full",
   components: {
     AsideToggler,
     AppHeader,
@@ -76,7 +84,6 @@ export default {
     AppAside,
     TheFooter,
     Breadcrumb,
-    DefaultAside,
     DefaultHeaderDropdownAccnt,
     SidebarForm,
     SidebarFooter,
@@ -85,17 +92,17 @@ export default {
     SidebarNav,
     SidebarMinimizer
   },
-  data () {
+  data() {
     return {
       nav: nav.items
     }
   },
   computed: {
-    name () {
+    name() {
       return this.$route.name
     },
-    list () {
-      return this.$route.matched.filter((route) => route.name || route.meta.label )
+    list() {
+      return this.$route.matched.filter(route => route.name || route.meta.label)
     }
   }
 }
